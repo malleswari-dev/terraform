@@ -19,3 +19,32 @@ variable "ec2_tags" {
   }
   
 }
+variable "sg_name" {
+    type = string
+    default = "allow-all"
+  
+}
+variable "egress_from_port" {
+    default = 0
+  
+}
+variable "egress_to_port" {
+    default = 0
+  
+}
+variable "ingress_from_port" {
+    default = 0
+  
+}
+variable "ingress_to_port" {
+    default = 0
+  
+}
+variable "protocol" {
+    default = "-1"
+  
+}
+variable "cidr" {
+    default = ["0.0.0.0/0"]
+  
+}
