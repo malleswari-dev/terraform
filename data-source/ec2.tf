@@ -1,11 +1,10 @@
 resource "aws_instance" "terraform" {
-  count = 10
-  ami           =  "ami-09c813fb71547fc4f"
+  ami           =  data.aws_ami.joindevops
   instance_type =  "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow-all.id]
 
   tags = {
-    Name = var.instances[count.index]
+    Name = "terraform"
     terraform = true
   }
 }
