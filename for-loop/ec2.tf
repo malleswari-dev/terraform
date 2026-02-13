@@ -5,7 +5,7 @@ resource "aws_instance" "terraform" {
   vpc_security_group_ids = [aws_security_group.allow-all.id]
 
   tags = {
-    Name = each.value
+    Name = each.key
     terraform = true
   }
 }
